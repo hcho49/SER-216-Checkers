@@ -1,0 +1,36 @@
+﻿               ************************************
+                Play Checkers - User Guide
+               ************************************
+
+Checker is a game played by two people. In this game, you can either play with another human or with the computer player.
+
+Starting a New Game:
+You can simply start a new game by pressing �New Game� button.
+
+Playing the Game:
+Checkers may be moved only diagonally, one square at a time, but cannot be moved backward. A checker may not move to a square occupied by the opponent, but may jump over the opponent's piece to the vacant square immediately beyond the opponent's piece. The leaped-over piece is �taken� and removed from the board. If an opponent's piece is in front of the new position, with an empty space beyond, the second piece may also be taken; this is called a double jump. Longer jumps also occur. Capturing opponent�s checkers is also not possible in backward direction. When a piece on either side has progressed to the last row on the opposite side, it is crowned�that is, made a "king". Crowned checkers are indicated with an additional �star�. Like other pieces, kings can move only diagonally, one square at a time, except when jumping opponent's checkers; however, kings may move either backward or forward and can capture opponent�s checkers in either direction. If you have a chance of capturing an opponent�s checker, you cannot move another checker just ignoring that.
+
+Game Modes:
+You can play with computer by selecting �1-player� mode. If you want to play with another human, you have to select "2-player" mode. 
+
+Colours:
+I �1-player� mode you can select either �yellow� or �red�. In both modes �yellow� checkers have to be moved first.
+
+Difficulty Levels:
+There are 5 difficulty levels available in �1-player� mode. If you are a novice to the game, recommended difficulty level is below �Normal�.
+
+ Undo:
+�Undo� function is available in both modes. You can go back one step by pressing �Undo� button. In �1-player� mode, if you have selected difficulty level �Master�, �undo� function is not available.
+
+Winning the Game:
+In order to win the game, you want to capture all opponent�s checkers. Winning is also possible when your opponent's checker cannot be move any more.
+
+Good Luck!
+
+
+*****************************************************************
+A.M.H.H. Abeykoon   CSE     070002V
+B.P.P. Fernando     CSE     070123R
+C.S.N.J. Fernando   CSE     070125B
+K.C.B. Gajasinghe   CSE     070137M
+*****************************************************************
