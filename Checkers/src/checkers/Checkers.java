@@ -517,6 +517,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 			case CheckerMove.incompleteMove:
 				incomplete = true;
 				highlight = true;
+				JOptionPane.showMessageDialog(null, "Incomplete move.");
 				// the ending square is now starting square for the next capture
 				startX = square[0];
 				startY = square[1];
@@ -526,6 +527,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 g.fillRect(50*square[0],50*square[1],50,50);
                 drawCheckers();
                 break;
+			case CheckerMove.illegalMove:
+				JOptionPane.showMessageDialog(null, "Illegal move. Please refer to the help documentation or try again.");
+				break;
 			}
         }
 	}
