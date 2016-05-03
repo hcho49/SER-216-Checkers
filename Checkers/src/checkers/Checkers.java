@@ -58,7 +58,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     int currType;
     boolean movable;
-
     int[][] board = new int[8][8];
 
     int [][] preBoard1= new int[8][8];                 //for undo
@@ -308,6 +307,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             this.toMove = yellowNormal;
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
+            
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
