@@ -251,7 +251,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             		options[0]);
             
             if (n == JOptionPane.YES_OPTION){
-            	newGame();
             	String [] color = {"Red", "Yellow"};
             	int m = JOptionPane.showOptionDialog(
             			null, 
@@ -277,6 +276,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                     update(getGraphics());
             	}
                 JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
+                newGame();
             }
             
         }
@@ -365,6 +365,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("Checkers/src//sounds//button.wav").start();
             JOptionPane.showMessageDialog(null, "You have started a new game.");
+            c1.setEnabled(true);
+            c2.setEnabled(true);
+            colorChange = 0;
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
