@@ -49,6 +49,8 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     String selectedColor;
     int selectedMode;
     int difficulty;
+    
+    int colorChange = 0;
 
     static final int redNormal = 1;
 	static final int yellowNormal = 2;
@@ -309,36 +311,54 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
-            c1.setSelected(true);
-            c2.setSelected(false);
-            selectedColor= c1.isSelected() ? "red" : "yellow";
-            this.toMove = redNormal;
+            if (colorChange == 0){
+            	c1.setSelected(true);
+            	c2.setSelected(false);
+            	selectedColor= c1.isSelected() ? "red" : "yellow";
+            	this.toMove = redNormal;
             
-            if (CheckerMove.noMovesLeft(board, yellowNormal) && 
-            	CheckerMove.noMovesLeft(board, redNormal)){
-            	newGame();
+            	if (CheckerMove.noMovesLeft(board, yellowNormal) && 
+            		CheckerMove.noMovesLeft(board, redNormal)){
+            		newGame();
+            	}
+            	else{
+            		CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+            		play();
+            		update(getGraphics());
+            	}
+            	colorChange++;
+            	c1.setEnabled(false);
+            	c2.setEnabled(false);
             }
             else{
-            	CheckerMove.ApplyMove(board,startX,startY,endX,endY);
-            	play();
-            	update(getGraphics());
+            	c1.setSelected(false);
+            	c2.setSelected(true);
             }
 
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
-            c1.setSelected(false);
-            c2.setSelected(true);
-            selectedColor= c1.isSelected() ? "red" : "yellow";
-            this.toMove= yellowNormal;
-            if (CheckerMove.noMovesLeft(board, yellowNormal) && 
+            if (colorChange == 0){
+            	c1.setSelected(false);
+            	c2.setSelected(true);
+            	selectedColor= c1.isSelected() ? "red" : "yellow";
+            	this.toMove= yellowNormal;
+            	if (CheckerMove.noMovesLeft(board, yellowNormal) && 
                 	CheckerMove.noMovesLeft(board, redNormal)){
                 	newGame();
+            	}
+            	else{
+            		CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+            		play();	
+            		update(getGraphics());
+            	}	
+            	colorChange++;
+            	c1.setEnabled(false);
+            	c2.setEnabled(false);
             }
             else{
-                CheckerMove.ApplyMove(board,startX,startY,endX,endY);
-                play();	
-                update(getGraphics());
+            	c1.setSelected(true);
+            	c2.setSelected(false);
             }
 
         }
@@ -582,6 +602,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 drawCheckers();
                 new PlaySound("Checkers/src//sounds//clickChecker.wav").start();
             }
+//			colorChange = 0;
+//			c1.setEnabled(true);
+//			c2.setEnabled(true);
 		}
 		else if ( highlight  && (float)(square[0]+square[1]) / 2 != (square[0]+square[1]) / 2)
 		{
@@ -596,6 +619,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				play();
                 update(g);
                 drawCheckers();
+                colorChange = 0;
+                c1.setEnabled(true);
+                c2.setEnabled(true);
                 break;
 			case CheckerMove.incompleteMove:
 				incomplete = true;
@@ -611,6 +637,9 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 drawCheckers();
                 break;
 			}
+//			colorChange = 0;
+//			c1.setEnabled(true);
+//			c2.setEnabled(true);
         }
 	}
 
