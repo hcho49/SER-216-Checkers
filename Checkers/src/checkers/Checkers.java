@@ -123,7 +123,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         nwB.setBounds(405,70,95,25);//297
         this.add(nwB);
         unB.setBounds(405,100,95,25);
-        //this.add(unB);
+        this.add(unB);
         hlpB.setBounds(415,10,25,25);
         this.add(hlpB);
         snB.setBounds(460,10,25,25);
@@ -142,18 +142,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         this.add(p1);
         this.add(p2);
 
-        col.setBounds(110,400,80,25);
-        //this.add(col);
+        col.setBounds(440,350,80,25);
+        this.add(col);
         c1.addActionListener(this);
         c2.addActionListener(this);
         c1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         c2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         colors.add(c1);
         colors.add(c2);
-        c1.setBounds(90,440,80,25);
-        c2.setBounds(90,420,80,25);
-        //this.add(c1);
-        //this.add(c2);
+        c1.setBounds(410,380,80,25);
+        c2.setBounds(410,410,80,25);
+        this.add(c1);
+        this.add(c2);
 
         level.setCursor(new Cursor(Cursor.HAND_CURSOR));
         level.addItemListener(this);
@@ -228,7 +228,6 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("1-Player")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
-            JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
             col.setEnabled(true);
             col.setVisible(true);
             diff.setEnabled(true);
@@ -239,10 +238,25 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setVisible(true);
             level.setEnabled(true);
             level.setVisible(true);
+            String [] options = {"Yes", "No"};
+            int n = JOptionPane.showOptionDialog(
+            		null, 
+            		"Would you like to start a new game?",
+            		"New Game?", 
+            		JOptionPane.YES_NO_OPTION, 
+            		JOptionPane.QUESTION_MESSAGE, 
+            		null, 
+            		options, 
+            		options[0]);
+            
+            if (n == JOptionPane.YES_OPTION){
+            	newGame();
+                JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
+            }
+            
         }
         if(e.getActionCommand().equalsIgnoreCase("2-Player")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
-            JOptionPane.showMessageDialog(null, "2-Player mode is now active.");
             col.setEnabled(false);
             col.setVisible(false);
             diff.setEnabled(false);
@@ -254,6 +268,21 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             level.setEnabled(false);
             level.setVisible(false);
             c2.setSelected(true);
+            String [] options = {"Yes", "No"};
+            int n = JOptionPane.showOptionDialog(
+            		null, 
+            		"Would you like to start a new game?",
+            		"New Game?", 
+            		JOptionPane.YES_NO_OPTION, 
+            		JOptionPane.QUESTION_MESSAGE, 
+            		null, 
+            		options, 
+            		options[0]);
+            
+            if (n == JOptionPane.YES_OPTION){
+            	newGame();
+                JOptionPane.showMessageDialog(null, "2-Player mode is now active.");
+            }
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
