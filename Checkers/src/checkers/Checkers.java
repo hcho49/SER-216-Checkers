@@ -267,10 +267,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                     this.toMove = redNormal;
                     CheckerMove.ApplyMove(board,startX,startY,endX,endY);
                     play();
+                    update(getGraphics());
             	}
             	if (m == JOptionPane.NO_OPTION){
                     c1.setSelected(true);
                     c2.setSelected(false);
+                    update(getGraphics());
             	}
                 JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
             }
@@ -311,15 +313,17 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setSelected(false);
             selectedColor= c1.isSelected() ? "red" : "yellow";
             this.toMove = redNormal;
+            
             if (CheckerMove.noMovesLeft(board, yellowNormal) && 
             	CheckerMove.noMovesLeft(board, redNormal)){
             	newGame();
             }
             else{
-            CheckerMove.ApplyMove(board,startX,startY,endX,endY);
-            play();
+            	CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+            	play();
+            	update(getGraphics());
             }
-            
+
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
@@ -332,9 +336,11 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 	newGame();
             }
             else{
-            CheckerMove.ApplyMove(board,startX,startY,endX,endY);
-            play();
+                CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+                play();	
+                update(getGraphics());
             }
+
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("Checkers/src//sounds//button.wav").start();
@@ -488,8 +494,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 			showStatus();
 			tempScore = GameEngine.MinMax(board,0,difficulty+2,result,this.toMove,counter);
 
-			if (result[0] == 0 && result[1] == 0)
+			if (result[0] == 0 && result[1] == 0){
 				loser = redNormal;
+//				changeSides = 0;
+			}
 			else
 			{
                 CheckerMove.moveComputer(board, result);
