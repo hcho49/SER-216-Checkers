@@ -41,9 +41,11 @@ public class Help extends JDialog {
                     txt.append(str+"\n");
             } catch (IOException e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "An error has occured. Please restart the game.");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "An error has occured. Please restart the game.");
         }
     }
 }

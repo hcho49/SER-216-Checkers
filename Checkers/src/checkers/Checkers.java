@@ -566,6 +566,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "An error has occured. Please restart the game.");
             }
             new GameWin("Yellow",this.getLocationOnScreen());
             won=1;
@@ -578,6 +579,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "An error has occured. Please restart the game.");
             }            
             new GameWin("Red",this.getLocationOnScreen());
             won=1;

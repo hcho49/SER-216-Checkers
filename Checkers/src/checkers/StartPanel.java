@@ -25,7 +25,7 @@ public class StartPanel extends JPanel{
         /////////////////////////////////////////////////////////////////////////
         g.setColor(Color.BLUE);
         g.setFont(new Font("Times new roman",Font.BOLD,14));
-        g.drawString("CS 3230 INTELLIGENT SYSTEMS",160,130);
+        g.drawString("SER 216 Team 09",210,130);
         //////////////////////////////////////////////////////////////////////
         g.setFont(new Font("Times new roman",Font.BOLD,12));
         g.setColor(Color.BLACK);
