@@ -260,12 +260,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             			null, 
             			color, 
             			color[0]);
-//            	if (m == JOptionPane.YES_OPTION){
-//            		selectedColor = "red";
-//            	}
-//            	if (m == JOptionPane.NO_OPTION){
-//            		selectedColor = "yellow";
-//            	}
+            	if (m == JOptionPane.YES_OPTION){
+                    c1.setSelected(true);
+                    c2.setSelected(false);
+                    selectedColor= c1.isSelected() ? "red" : "yellow";
+                    this.toMove = redNormal;
+                    CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+                    play();
+            	}
+            	if (m == JOptionPane.NO_OPTION){
+                    c1.setSelected(true);
+                    c2.setSelected(false);
+            	}
                 JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
             }
             
@@ -304,7 +310,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c1.setSelected(true);
             c2.setSelected(false);
             selectedColor= c1.isSelected() ? "red" : "yellow";
-            this.toMove = yellowNormal;
+            this.toMove = redNormal;
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
             
@@ -314,7 +320,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c1.setSelected(false);
             c2.setSelected(true);
             selectedColor= c1.isSelected() ? "red" : "yellow";
-            this.toMove= redNormal;
+            this.toMove= yellowNormal;
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
         }
