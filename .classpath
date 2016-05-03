@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Checkers/src"/>
+	<classpathentry kind="lib" path="Checkers/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="Checkers/antlr-runtime-3.3.jar"/>
+	<classpathentry kind="lib" path="Checkers/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="Checkers/contiperf-2.3.2.jar"/>
+	<classpathentry kind="lib" path="Checkers/databene-benerator-0.9.7.jar"/>
+	<classpathentry kind="lib" path="Checkers/databene-commons-0.5.33.jar"/>
+	<classpathentry kind="lib" path="Checkers/databene-script-0.7.22.jar"/>
+	<classpathentry kind="lib" path="Checkers/databene-webdecs-0.8.4.jar"/>
+	<classpathentry kind="lib" path="Checkers/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="Checkers/feed4junit-1.1.22.jar"/>
+	<classpathentry kind="lib" path="Checkers/freemarker-2.3.20.jar"/>
+	<classpathentry kind="lib" path="Checkers/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="Checkers/hsqldb-1.8.0.7.jar"/>
+	<classpathentry kind="lib" path="Checkers/jdbacl-0.8.18.jar"/>
+	<classpathentry kind="lib" path="Checkers/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="Checkers/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="Checkers/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="Checkers/poi-ooxml-schemas-3.9.jar"/>
+	<classpathentry kind="lib" path="Checkers/slf4j-api-1.6.4.jar"/>
+	<classpathentry kind="lib" path="Checkers/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="Checkers/stringtemplate-3.2.1.jar"/>
+	<classpathentry kind="lib" path="Checkers/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="Checkers/xercesImpl-2.9.1.jar"/>
+	<classpathentry kind="lib" path="Checkers/xml-apis-1.3.04.jar"/>
+	<classpathentry kind="lib" path="Checkers/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="Checkers/classes"/>
+</classpath>
