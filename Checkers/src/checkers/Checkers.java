@@ -311,6 +311,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setSelected(false);
             selectedColor= c1.isSelected() ? "red" : "yellow";
             this.toMove = redNormal;
+            if (CheckerMove.noMovesLeft(board, yellowNormal) && 
+            	CheckerMove.noMovesLeft(board, redNormal)){
+            	newGame();
+            }
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
             
@@ -321,6 +325,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setSelected(true);
             selectedColor= c1.isSelected() ? "red" : "yellow";
             this.toMove= yellowNormal;
+            if (CheckerMove.noMovesLeft(board, yellowNormal) && 
+                	CheckerMove.noMovesLeft(board, redNormal)){
+                	newGame();
+            }
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
         }
