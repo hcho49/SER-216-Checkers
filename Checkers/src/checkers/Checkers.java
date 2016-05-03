@@ -228,6 +228,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("1-Player")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
+            JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
             col.setEnabled(true);
             col.setVisible(true);
             diff.setEnabled(true);
@@ -241,6 +242,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("2-Player")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
+            JOptionPane.showMessageDialog(null, "2-Player mode is now active.");
             col.setEnabled(false);
             col.setVisible(false);
             diff.setEnabled(false);
@@ -261,6 +263,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("Checkers/src//sounds//button.wav").start();
+            JOptionPane.showMessageDialog(null, "You have started a new game.");
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
@@ -276,10 +279,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 snB.setIcon(snp);
                 silent=false;
                 new PlaySound("Checkers/src//sounds//button.wav").start();
+                JOptionPane.showMessageDialog(null, "Unmuted.");
             }
             else{
                 snB.setIcon(mup);
                 silent=true;
+                JOptionPane.showMessageDialog(null, "Muted");
             }
         }
     }
