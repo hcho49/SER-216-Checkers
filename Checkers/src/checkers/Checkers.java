@@ -251,6 +251,22 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             
             if (n == JOptionPane.YES_OPTION){
             	newGame();
+            	String [] color = {"Red", "Yellow"};
+            	int m = JOptionPane.showOptionDialog(
+            			null, 
+            			"Would you like to play as Red or Yellow?", 
+            			"Choose Color", 
+            			JOptionPane.YES_NO_OPTION, 
+            			JOptionPane.QUESTION_MESSAGE, 
+            			null, 
+            			color, 
+            			color[0]);
+//            	if (m == JOptionPane.YES_OPTION){
+//            		selectedColor = "red";
+//            	}
+//            	if (m == JOptionPane.NO_OPTION){
+//            		selectedColor = "yellow";
+//            	}
                 JOptionPane.showMessageDialog(null, "1-Player mode is now active.");
             }
             
@@ -286,9 +302,21 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
+            c1.setSelected(true);
+            c2.setSelected(false);
+            selectedColor= c1.isSelected() ? "red" : "yellow";
+            this.toMove = yellowNormal;
+            CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+            play();
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
             new PlaySound("Checkers/src//sounds//option.wav").start();
+            c1.setSelected(false);
+            c2.setSelected(true);
+            selectedColor= c1.isSelected() ? "red" : "yellow";
+            this.toMove= redNormal;
+            CheckerMove.ApplyMove(board,startX,startY,endX,endY);
+            play();
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("Checkers/src//sounds//button.wav").start();
@@ -468,7 +496,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 			{
                 CheckerMove.moveComputer(board, result);
                 if (loser == empty){
-                    new PlaySound("src//sounds//comPlay.wav").start();
+                    new PlaySound("Checkers/src//sounds//comPlay.wav").start();
                     play();
                 }
 
