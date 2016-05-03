@@ -25,18 +25,16 @@ public class StartPanel extends JPanel{
         /////////////////////////////////////////////////////////////////////////
         g.setColor(Color.BLUE);
         g.setFont(new Font("Times new roman",Font.BOLD,14));
-        g.drawString("SER 216 Team 09",210,130);
+        g.drawString("SER 216 Online Team 09",190,130);
         //////////////////////////////////////////////////////////////////////
         g.setFont(new Font("Times new roman",Font.BOLD,12));
         g.setColor(Color.BLACK);
-        g.drawString("A.M.H.H. ABEYKOON",180,180);
-        g.drawString("070002V",320,180);
-        g.drawString("B.P.P. FERNANDO",180,200);
-        g.drawString("070123R",320,200);
-        g.drawString("C.S.N.J. FERNANDO",180,220);
-        g.drawString("070125B",320,220);
-        g.drawString("K.C.B. GAJASINGHE",180,240);
-        g.drawString("070137M",320,240);
+        g.drawString("Trent Ferree",180,180);
+        g.drawString("5000000 Points",320,180);
+        g.drawString("Hancheol Cho",180,200);
+        g.drawString("10.9 Points",320,200);
+        g.drawString("Josh Kappamamoottil",180,220);
+        g.drawString("0 Points (Major Loser)",320,220);
         ////////////////////////////////////////////////////////////////////////
         g.drawImage(new ImageIcon(getClass().getResource("/images/checkersIcon.jpg")).getImage(),350,280,this);//checkersIcon.jpg
 
