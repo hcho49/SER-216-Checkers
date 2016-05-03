@@ -583,7 +583,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         int y=e.getY();
         int [] square=new int[2];
 
-        if(x>=0 && x<=500 && y<=500 && y>=0)
+        if(x>=0 && x<=400 && y<=400 && y>=0)
             square= CheckerMove.getIndex(x,y);
         
         if (toMove == Checkers.redNormal &&	(board[square[0]][square[1]] == Checkers.redNormal ||
