@@ -315,8 +315,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             	CheckerMove.noMovesLeft(board, redNormal)){
             	newGame();
             }
+            else{
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
+            }
             
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
@@ -329,8 +331,10 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 	CheckerMove.noMovesLeft(board, redNormal)){
                 	newGame();
             }
+            else{
             CheckerMove.ApplyMove(board,startX,startY,endX,endY);
             play();
+            }
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("Checkers/src//sounds//button.wav").start();
