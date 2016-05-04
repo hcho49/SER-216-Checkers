@@ -70,7 +70,8 @@ public class CheckerFrame extends JFrame implements ActionListener{
         if (e.getSource() == newFeaturesBtn){
         	JFrame f = new JFrame("New Features");
         	f.setSize(600, 400);
-        	JTextPane jtp = new JTextPane();
+        	JScrollPane jtp = new JScrollPane();
+        	JTextArea textArea = new JTextArea();
         	BufferedReader b = null;
 			try {
 				b = new BufferedReader(new FileReader(new File("Checkers/src//guidance//NewFeatures.txt")));
@@ -89,8 +90,9 @@ public class CheckerFrame extends JFrame implements ActionListener{
 				e1.printStackTrace();
 			}
         	jtp.setSize(600,400);
-        	
-        	jtp.setText(text);
+        	jtp.setViewportView(textArea);
+        	jtp.setVerticalScrollBarPolicy(jtp.VERTICAL_SCROLLBAR_ALWAYS);
+        	textArea.append(text);
         	f.add(jtp);
         	f.setLocationRelativeTo(null);
         	f.setVisible(true);
