@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class StartPanel extends JPanel{
     
-    StartPanel(){
+    public StartPanel(){
         setupGUI();
     }
 

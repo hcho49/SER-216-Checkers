@@ -8,7 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import checkers.IntelliChecker;
+
 public class IntelliCheckerTest {
+	private IntelliChecker my_intelliChecker;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,15 +23,17 @@ public class IntelliCheckerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		my_intelliChecker = new IntelliChecker();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		my_intelliChecker = null;
 	}
 
 	@Test
-	public void test() {
-		
+	public void testIntelliChecker() {
+		assertFalse(my_intelliChecker.equals(null));
 	}
 
 }
