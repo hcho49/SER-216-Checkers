@@ -168,7 +168,7 @@ Weight of checkers
          return turn==Checkers.yellowNormal ? Checkers.redNormal : Checkers.yellowNormal;
     }
 
-    static int getTurn(int turn) {                     //returns the turn
+    public static int getTurn(int turn) {                     //returns the turn
           return CheckerMove.colour(turn)==Checkers.yellowNormal ? -inf : inf;
     }
 }

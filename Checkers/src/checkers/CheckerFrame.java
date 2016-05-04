@@ -15,7 +15,7 @@ public class CheckerFrame extends JFrame implements ActionListener{
     JButton newFeaturesBtn = new JButton("New Features");
     JPanel gmP=new StartPanel();
   
-    CheckerFrame(){
+    public CheckerFrame(){
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             SwingUtilities.updateComponentTreeUI(this); //changing the appearence of the frame
