@@ -1,0 +1,11 @@
+5/3/2016
+1. When a user chooses the 1 or 2 player mode during game, the changes are not applied to the current game.
+2. When the user selects the 1 st or 2 nd player mode, the screen changes appropriately with the correct
+number of checker pieces on both ends.
+3. When the user plays a wrong move that is against the documentation provided within the Checkers game,
+the user sees a dialog box that informs them about their error and how to fix it. Also dialog boxes
+will appear for other relevant areas within the code and in the game that contains exception handlers.
+4. When the user clicks the Help button when playing the game, the documentation present is
+relevant, usable, detailed and up to date. Also when the user clicks on a button dedicated to new features
+added, the user is able to view relevant information related to new features that were added and
+when.
