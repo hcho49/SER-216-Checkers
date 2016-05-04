@@ -8,8 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class HelpTest {
+import checkers.Help;
 
+public class HelpTest {
+	private Help checkerHelp;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -20,15 +23,17 @@ public class HelpTest {
 
 	@Before
 	public void setUp() throws Exception {
+		checkerHelp = new Help();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		checkerHelp = null;
 	}
 
 	@Test
-	public void test() {
-		
+	public void setupGUITest() {
+		assertFalse(checkerHelp.equals(null));
 	}
 
 }
