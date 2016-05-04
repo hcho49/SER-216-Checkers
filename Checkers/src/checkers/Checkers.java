@@ -84,7 +84,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     Point winPoint;
 
-    Checkers(){
+    public Checkers(){
         setupGUI();
     }
 

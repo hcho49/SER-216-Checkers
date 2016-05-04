@@ -12,7 +12,7 @@ public class CheckerMove {
      * returns the index according to the given x and y values
      */
 
-    static int [] getIndex(int x,int y){
+    public static int [] getIndex(int x,int y){
         int [] index=new int [2];
         for(int i=0;i<8;i++){
             for(int j=0;j<8;j++){
@@ -31,7 +31,7 @@ public class CheckerMove {
     noMovesLeft return true if no more movents are left for the next player
     else it returns false
     */
-    static boolean noMovesLeft(int[][] board,int toMove)
+    public static boolean noMovesLeft(int[][] board,int toMove)
     {
             for (int i=0; i<8; i++){
                     for (int j=0; j<8; j++){
@@ -110,7 +110,7 @@ public class CheckerMove {
      Returns incompleteMove if a capture has taken place.
      Note: it does not check if a 2nd capture is possible!
     */
-    static int isMoveLegal(int[][] board,int srtI,int srtJ,int endI,int endJ,int turn)
+    public static int isMoveLegal(int[][] board,int srtI,int srtJ,int endI,int endJ,int turn)
         {
 			if (! (inRange(srtI,srtJ) && inRange(endI,endJ) ) )       //if try to move out of the board,
 				return illegalMove;                                           //returns illegal move
